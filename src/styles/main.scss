@@ -1,0 +1,222 @@
+@use 'vars';
+
+@font-face {
+    font-family: starjedi;
+    src: url(../../assets/star_jedi/starjedi/Starjedi.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: starjedi, sans-serif;
+    color: vars.$mainTextColor;
+    list-style: none;
+
+    @media (max-width: 767px) {
+        font-size: 95%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        font-size: 95%;
+    }   
+}
+
+body {
+    background-color: vars.$backgroundColor;
+}
+
+.container {
+    max-width: vars.$containerMaxWidth;
+    width: vars.$containerWidth;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+        width: 90%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        width: 90%;
+    }
+}
+
+.header {
+    display: block;
+    background-color: vars.$backgroundColor;
+    padding-bottom: 8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.logo {
+    text-align: center;   
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+
+    a, a:visited {
+        text-decoration: none;
+        color: vars.$SecondaryTextColor;
+        font-size: 32px;
+    }
+}
+
+.menu {
+    margin-top: 8px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        display: none;
+    }
+
+    @media (min-width: 1024px) {
+        display: block;
+    }
+
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @media (max-width: 767px) {
+            display: block;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            display: block;
+            text-align: center;
+        }
+
+        &__item {
+            letter-spacing: 2px;
+
+            a {
+                text-decoration: none;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                padding: 0 4px 4px;
+
+                &:hover {
+                    border: 2px solid vars.$SecondaryTextColor;
+                    color: vars.$SecondaryTextColor;
+                    transition: all ease .7s;
+                }
+            }
+        }
+    }
+}
+
+.menu-toggle {
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+hr {
+    box-shadow: 0px 0px 4px 1px vars.$SecondaryTextColor;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    letter-spacing: 4px;
+    color: vars.$SecondaryTextColor;
+}
+
+section {
+    margin-top: 32px;
+}
+
+#about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: 1fr;
+    }
+
+    p {
+        text-align: justify;
+        letter-spacing: 2px;
+        margin-bottom: 48px;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 16px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        margin-bottom: 16px;
+    }
+}
+
+.images__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 8px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__item {
+
+        img {
+            width: 100%;
+            border: 2px solid transparent;
+            border-radius: 8px;
+
+            &:hover {
+                border: 2px solid vars.$SecondaryTextColor;
+                border-radius: 8px;
+                cursor: pointer;
+                box-shadow: 0px 0px 4px 1px vars.$SecondaryTextColor;
+                transition: all ease .7s;
+            }
+        }
+
+        span {
+            letter-spacing: 2px;
+            padding-left: 8px;
+            text-transform: lowercase;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 56px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            margin-bottom: 56px;
+        }
+    }
+}
+
+.footer {
+    margin: 32px 0;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: vars.$SecondaryTextColor;
+    }
+}
+
+
